@@ -46,7 +46,8 @@ def setup_openai_client():
     """Setup OpenAI client with OpenRouter"""
     if 'openai_client' not in st.session_state:
         #api_key = st.sidebar.text_input("OpenRouter API Key", type="password", help="Enter your OpenRouter API key to get AI insights")
-        api_key = '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'
+        #api_key = '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'
+        api_key = os.environ.get("OPENAI_API_KEY")
         if api_key:
             try:
                 client = OpenAI(
@@ -675,4 +676,5 @@ df['feature1_plus_feature2'] = df['feature1'] + df['feature2']
         """)
 
 if __name__ == "__main__":
+
     main()
