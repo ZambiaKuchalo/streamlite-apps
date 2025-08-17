@@ -18,7 +18,7 @@ def get_openai_client():
     return OpenAI(
         base_url="https://openrouter.ai/api/v1",
         #api_key=st.secrets.get("OPENROUTER_API_KEY", "your-api-key-here")  # Put your API key in secrets.toml
-        api_key=os.getenv("OPENROUTER_API_KEY", "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")
+        api_key = os.environ.get("OPENAI_API_KEY")
     )
 
 client = get_openai_client()
@@ -247,3 +247,4 @@ st.sidebar.caption("Developed by Daniel Kasonde")
 #3. Or replace the API key directly in the code
 # Version info
 st.sidebar.markdown("---")
+
