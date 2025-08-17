@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -678,3 +679,4 @@ df['feature1_plus_feature2'] = df['feature1'] + df['feature2']
 if __name__ == "__main__":
 
     main()
+
