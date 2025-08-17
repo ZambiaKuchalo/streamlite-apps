@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import requests
 import json
@@ -94,7 +95,7 @@ with st.sidebar:
     st.markdown('<div class="model-selector"><h2>🚀 Configuration</h2></div>', unsafe_allow_html=True)
     
     # Default API Key - Replace with your actual API key
-    DEFAULT_API_KEY = "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"  # Replace this with your actual API key
+    DEFAULT_API_KEY = os.environ.get("OPENAI_API_KEY")
     
     # API Key input with default value
     api_key = st.text_input(
@@ -298,4 +299,5 @@ st.markdown("""
 <b>Dependencies:</b>AI generated content may be harmful.:<br>
 
 </small>
+
 """, unsafe_allow_html=True)
